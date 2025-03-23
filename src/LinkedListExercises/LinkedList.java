@@ -86,4 +86,51 @@ public class LinkedList {
          System.out.println("After removing last");
          return temp;
     }
+
+    public void prepend(int value) {
+        Node newNode = new Node(value);
+        if (length == 0) {
+            head = newNode;tail = newNode;
+        }
+if (length >= 1) {
+    newNode.next = head;
+    head = newNode;
+
+    }
+        length++;
+    }
+
+    public Node removeFirst() {
+        if (length == 0) return null;
+        Node temp = head;
+        head = head.next;
+        temp.next = null;
+        length--;
+        if (length == 0) {
+            tail = null;
+        }
+        return temp;
+    }
+
+    public Node get(int index) {
+        if(length == 0 || index >= length || index < 0)  {
+            return null;
+        }else{
+            Node temp = head;
+            for (int i = 0; i < index; i++) {
+                if (i == index){
+                    break;
+                }
+                temp = temp.next;
+        }
+            return temp;
+        }
+    }
+
+    public boolean set(int index, int value){
+        if(length == 0 || index >= length || index < 0) return false;
+        Node temp = get(index);
+        temp.value = value;
+        return true;
+    }
 }
