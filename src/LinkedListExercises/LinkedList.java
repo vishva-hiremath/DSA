@@ -55,4 +55,35 @@ public class LinkedList {
             printList();
         }
     }
+
+    public void append(int value) {
+        Node newNode = new Node(value);
+        if (length == 0) {
+            head = new Node(value);
+            tail = head;
+        }else{
+            tail.next = newNode;
+            tail = newNode;
+            length++;
+        }
+    }
+
+    public Node removeLast() {
+        if (length == 0) return null;
+         Node temp = head;
+         Node pre = head;
+        while (temp.next != null) {
+             pre = temp;
+             temp = temp.next;
+         }
+         tail = pre;
+         tail.next = null;
+         length--;
+         if (length == 0) {
+             head = null;
+             tail = null;
+         }
+         System.out.println("After removing last");
+         return temp;
+    }
 }
