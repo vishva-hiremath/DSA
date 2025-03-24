@@ -133,4 +133,44 @@ if (length >= 1) {
         temp.value = value;
         return true;
     }
+    public boolean insert(int index, int value){
+        if(length == 0 || index > length || index < 0) return false;
+        Node newNode = new Node(value);
+        if(index == 0){
+        prepend(value);
+        return true;}
+        if(index == length){
+           append(value);
+           return true;
+        }
+        Node temp = get(index);
+        newNode.next = temp;
+        get(index-1).next = newNode;
+        length++;
+        return true;
+    }
+
+    public Node remove(int index){
+        if(length == 0 || index >= length || index < 0) return null;
+        Node temp = get(index);
+        if(index == 0){removeFirst(); return temp;}
+        if(index == length-1){removeLast(); return temp;}
+        Node prev = get(index-1);
+        prev.next = prev.next.next;
+        temp.next = null;
+        length--;
+        return temp;
+    }
+
+    public void reverse(){
+        Node temp =tail;
+        Node temp1;
+        for (int i = length-1; i > 0; i--) {
+           temp1  = get(i);
+           temp1.next = get(i-1);
+        }
+        head.next = null;
+        tail = head;
+        head = temp;
+    }
 }
