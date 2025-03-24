@@ -1,27 +1,23 @@
-package Datastructures.LinkedListExercises.LeetCodes.HasLoop;
+package Datastructures.LinkedListExercises.LeetCodes.FindKthNode;
 
 public class Main {
 
     public static void main(String[] args) {
-
         LinkedList myLinkedList = new LinkedList(1);
         myLinkedList.append(2);
         myLinkedList.append(3);
         myLinkedList.append(4);
         myLinkedList.append(5);
 
-        // create a loop by connecting the tail to the second node
-        myLinkedList.getTail().next = myLinkedList.getHead().next;
+        int k = 2;
+        int result = myLinkedList.findKthFromEnd(k).value;
 
-        System.out.println("Has Loop:");
-        System.out.println( myLinkedList.hasLoop());
-
+        System.out.println(result); // Output: 4
 
         /*
             EXPECTED OUTPUT:
             ----------------
-            Has Loop:
-            true
+            4
 
         */
 
