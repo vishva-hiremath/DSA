@@ -1,4 +1,4 @@
-package LinkedListExercises;
+package Datastructures.LinkedListExercises;
 
 public class Main {
     public static void main(String[] args) {

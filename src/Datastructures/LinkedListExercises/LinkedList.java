@@ -1,6 +1,4 @@
-package LinkedListExercises;
-
-import org.w3c.dom.Node;
+package Datastructures.LinkedListExercises;
 
 public class LinkedList {
     private Node head;
