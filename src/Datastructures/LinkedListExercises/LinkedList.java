@@ -161,7 +161,22 @@ if (length >= 1) {
     }
 
     public void reverse(){
-        Node temp =tail;
+        Node temp = head;
+        head = tail;
+        tail = temp;
+
+        Node after = temp.next;
+        Node before = null;
+
+        for(int i=0; i <length; i++){
+            after = temp.next;
+            temp.next = before;
+
+            before = temp;
+            temp = after;
+
+        }
+        /*Node temp =tail;
         Node temp1;
         for (int i = length-1; i > 0; i--) {
            temp1  = get(i);
@@ -169,6 +184,6 @@ if (length >= 1) {
         }
         head.next = null;
         tail = head;
-        head = temp;
+        head = temp;*/
     }
 }
