@@ -1,4 +1,4 @@
-package Datastructures.LinkedListExercises.LeetCodes.BinaryToDecimal;
+package Datastructures.LinkedList.LeetCodes.BinaryToDecimal;
 
 public class LinkedList {
 

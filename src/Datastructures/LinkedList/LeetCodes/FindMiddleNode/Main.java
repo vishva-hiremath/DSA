@@ -1,4 +1,4 @@
-package Datastructures.LinkedListExercises.LeetCodes.FindMiddleNode;
+package Datastructures.LinkedList.LeetCodes.FindMiddleNode;
 
 public class Main {
 

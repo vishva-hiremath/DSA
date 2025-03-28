@@ -1,4 +1,4 @@
-package Datastructures.LinkedListExercises.LeetCodes.PartitionList;
+package Datastructures.LinkedList.LeetCodes.PartitionList;
 
 public class Main {
 

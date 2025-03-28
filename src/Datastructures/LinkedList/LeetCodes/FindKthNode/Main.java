@@ -1,4 +1,4 @@
-package Datastructures.LinkedListExercises.LeetCodes.FindKthNode;
+package Datastructures.LinkedList.LeetCodes.FindKthNode;
 
 public class Main {
 

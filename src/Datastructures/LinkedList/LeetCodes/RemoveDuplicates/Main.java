@@ -1,4 +1,4 @@
-package Datastructures.LinkedListExercises.LeetCodes.RemoveDuplicates;
+package Datastructures.LinkedList.LeetCodes.RemoveDuplicates;
 
 public class Main {
 

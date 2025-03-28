@@ -1,4 +1,4 @@
-package Datastructures.LinkedListExercises;
+package Datastructures.LinkedList;
 
 public class LinkedList {
     private Node head;

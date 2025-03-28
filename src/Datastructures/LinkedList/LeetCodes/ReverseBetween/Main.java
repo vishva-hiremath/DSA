@@ -1,4 +1,4 @@
-package Datastructures.LinkedListExercises.LeetCodes.ReverseBetween;
+package Datastructures.LinkedList.LeetCodes.ReverseBetween;
 
 public class Main {
 

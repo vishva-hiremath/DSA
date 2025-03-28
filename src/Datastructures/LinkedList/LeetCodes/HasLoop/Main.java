@@ -1,4 +1,4 @@
-package Datastructures.LinkedListExercises.LeetCodes.HasLoop;
+package Datastructures.LinkedList.LeetCodes.HasLoop;
 
 public class Main {
 

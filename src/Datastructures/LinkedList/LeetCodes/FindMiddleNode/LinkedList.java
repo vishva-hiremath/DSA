@@ -1,10 +1,9 @@
-package Datastructures.LinkedListExercises.LeetCodes.HasLoop;
+package Datastructures.LinkedList.LeetCodes.FindMiddleNode;
 
 public class LinkedList {
 
     private Node head;
     private Node tail;
-    private int length;
 
     class Node {
         int value;
@@ -19,7 +18,6 @@ public class LinkedList {
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
-        length = 1;
     }
 
     public Node getHead() {
@@ -28,10 +26,6 @@ public class LinkedList {
 
     public Node getTail() {
         return tail;
-    }
-
-    public int getLength() {
-        return length;
     }
 
     public void printList() {
@@ -43,16 +37,15 @@ public class LinkedList {
     }
 
     public void printAll() {
-        if (length == 0) {
+        if (head == null) {
             System.out.println("Head: null");
             System.out.println("Tail: null");
         } else {
             System.out.println("Head: " + head.value);
             System.out.println("Tail: " + tail.value);
         }
-        System.out.println("Length:" + length);
         System.out.println("\nLinked List:");
-        if (length == 0) {
+        if (head == null) {
             System.out.println("empty");
         } else {
             printList();
@@ -62,31 +55,27 @@ public class LinkedList {
     public void makeEmpty() {
         head = null;
         tail = null;
-        length = 0;
     }
 
     public void append(int value) {
         Node newNode = new Node(value);
-        if (length == 0) {
+        if (head == null) {
             head = newNode;
             tail = newNode;
         } else {
             tail.next = newNode;
             tail = newNode;
         }
-        length++;
     }
 
-    public boolean hasLoop(){
+    public Node findMiddleNode(){
         Node slow = head;
         Node fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-            if (slow == fast) return true;
         }
-        return false;
+        return slow;
     }
 
 }
-

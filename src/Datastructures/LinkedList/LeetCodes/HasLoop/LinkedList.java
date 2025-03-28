@@ -1,12 +1,9 @@
-package Datastructures.LinkedListExercises.LeetCodes.RemoveDuplicates;
-
-import java.util.HashSet;
-import java.util.Set;
-
+package Datastructures.LinkedList.LeetCodes.HasLoop;
 
 public class LinkedList {
 
     private Node head;
+    private Node tail;
     private int length;
 
     class Node {
@@ -21,11 +18,16 @@ public class LinkedList {
     public LinkedList(int value) {
         Node newNode = new Node(value);
         head = newNode;
+        tail = newNode;
         length = 1;
     }
 
     public Node getHead() {
         return head;
+    }
+
+    public Node getTail() {
+        return tail;
     }
 
     public int getLength() {
@@ -43,8 +45,10 @@ public class LinkedList {
     public void printAll() {
         if (length == 0) {
             System.out.println("Head: null");
+            System.out.println("Tail: null");
         } else {
             System.out.println("Head: " + head.value);
+            System.out.println("Tail: " + tail.value);
         }
         System.out.println("Length:" + length);
         System.out.println("\nLinked List:");
@@ -57,43 +61,31 @@ public class LinkedList {
 
     public void makeEmpty() {
         head = null;
+        tail = null;
         length = 0;
     }
 
     public void append(int value) {
         Node newNode = new Node(value);
-        if (head == null) {
+        if (length == 0) {
             head = newNode;
+            tail = newNode;
         } else {
-            Node current = head;
-            while (current.next != null) {
-                current = current.next;
-            }
-            current.next = newNode;
+            tail.next = newNode;
+            tail = newNode;
         }
         length++;
     }
 
-    public void removeDuplicates(){
-        Set<Integer> mySet = new HashSet<Integer>();
-        Node current = head;
-        Node previous = null;
-        Node dummy = null;
-        while (current != null) {
-
-            if (mySet.contains(current.value)) {
-                previous.next = current.next;
-                dummy = current;
-                length -= 1;
-
-            }
-            else {
-                mySet.add(current.value);
-                previous = current; // Set it only for
-            }
-            current = current.next;
-            if (dummy != null) dummy.next = null;
+    public boolean hasLoop(){
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) return true;
         }
+        return false;
     }
 
 }
